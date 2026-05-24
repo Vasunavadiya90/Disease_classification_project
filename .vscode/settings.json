@@ -1,0 +1,15 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/env/Scripts/python.exe",
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/src"
+    ],
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "cursorpyright.analysis.extraPaths": [
+        "${workspaceFolder}/src"
+    ]
+}

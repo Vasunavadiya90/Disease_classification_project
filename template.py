@@ -34,6 +34,7 @@ list_of_files = [
 for filepath in list_of_files:
     file_path  = Path(filepath)
     file_dir , file_name = os.path.split(file_path)
+    print(file_dir,file_name)
 
 
     if file_dir!="":

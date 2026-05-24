@@ -1,1 +1,99 @@
 [2026-05-20 17:08:53,590: INFO: main: Intro to Disease classification]
+[2026-05-23 17:20:15,460: INFO: main: Intro to Disease classification]
+[2026-05-24 20:06:54,436: INFO: common: yaml file : config\config.yaml loaded successfully]
+[2026-05-24 20:06:54,438: INFO: common: yaml file : params.yaml loaded successfully]
+[2026-05-24 20:13:10,311: INFO: common: yaml file : config\config.yaml loaded successfully]
+[2026-05-24 20:53:43,139: INFO: stage_01_predict_pipeline: >>>>>>>> data_Ingestion_stage started <<<<<<<<]
+[2026-05-24 20:53:43,141: INFO: common: Created Directory at :artifacts]
+[2026-05-24 20:53:43,141: INFO: common: Created Directory at :artifacts/data_ingestion]
+[2026-05-24 20:53:43,141: ERROR: stage_01_predict_pipeline: DataIngestionConfig.__init__() got an unexpected keyword argument 'source_url'. Did you mean 'source_URL'?]
+Traceback (most recent call last):
+  File "e:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\pipeline\stage_01_predict_pipeline.py", line 45, in <module>
+    obj.main()
+    ~~~~~~~~^^
+  File "e:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\pipeline\stage_01_predict_pipeline.py", line 19, in main
+    data_ingestion_config = config.get_data_ingestion_config()
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\config\configuration.py", line 23, in get_data_ingestion_config
+    data_ingestion_config = DataIngestionConfig(
+        root_dir=config.root_dir,
+    ...<2 lines>...
+        unzip_dir=config.unzip_dir
+    )
+TypeError: DataIngestionConfig.__init__() got an unexpected keyword argument 'source_url'. Did you mean 'source_URL'?
+[2026-05-24 20:56:52,517: INFO: stage_01_predict_pipeline: >>>>>>>> data_Ingestion_stage started <<<<<<<<]
+[2026-05-24 20:56:52,519: INFO: common: Created Directory at :artifacts]
+[2026-05-24 20:56:52,519: INFO: common: Created Directory at :artifacts/data_ingestion]
+[2026-05-24 20:56:52,672: INFO: stage_01_predict_pipeline: >>>>>> stage data_Ingestion_stage completed <<<<<<
+
+x==========x]
+[2026-05-24 23:47:35,667: INFO: stage_01_predict_pipeline: >>>>>>>> data_Ingestion_stage started <<<<<<<<]
+[2026-05-24 23:47:35,703: INFO: common: Created Directory at :artifacts]
+[2026-05-24 23:47:35,705: INFO: common: Created Directory at :artifacts/data_ingestion]
+[2026-05-24 23:47:55,893: INFO: stage_01_predict_pipeline: >>>>>>>> data_Ingestion_stage started <<<<<<<<]
+[2026-05-24 23:47:55,896: INFO: common: Created Directory at :artifacts]
+[2026-05-24 23:47:55,896: INFO: common: Created Directory at :artifacts/data_ingestion]
+[2026-05-24 23:47:56,126: INFO: stage_01_predict_pipeline: >>>>>> stage data_Ingestion_stage completed <<<<<<
+
+x==========x]
+[2026-05-24 23:56:04,103: INFO: main: Intro to Disease classification]
+[2026-05-24 23:56:04,103: INFO: main: >>>>>>> stage data_Ingestion_stage started >>>>>>>>>>>>>>>]
+[2026-05-24 23:56:04,138: INFO: common: Created Directory at :artifacts]
+[2026-05-24 23:56:04,144: INFO: common: Created Directory at :artifacts/data_ingestion]
+[2026-05-24 23:56:04,148: ERROR: main: [WinError 2] The system cannot find the file specified: 'artifacts/data_ingestion/data.zip']
+Traceback (most recent call last):
+  File "E:\data science\Deep_learning_project\Disease_classification_project\main.py", line 16, in <module>
+    dataingestion.main()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\pipeline\stage_01_predict_pipeline.py", line 25, in main
+    print(os.path.getsize(data_ingestion.config.local_data_file))
+          ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 86, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'artifacts/data_ingestion/data.zip'
+[2026-05-24 23:58:01,853: INFO: main: Intro to Disease classification]
+[2026-05-24 23:58:01,854: INFO: main: >>>>>>> stage data_Ingestion_stage started >>>>>>>>>>>>>>>]
+[2026-05-24 23:58:01,857: INFO: common: Created Directory at :artifacts]
+[2026-05-24 23:58:01,857: INFO: common: Created Directory at :artifacts/data_ingestion]
+[2026-05-24 23:58:02,190: INFO: main: >>>>>>>> stage data_Ingestion_stage Completed >>>>>>>>>>>>>]
+[2026-05-25 00:13:33,256: INFO: common: Created Directory at :artifacts]
+[2026-05-25 00:13:33,257: INFO: common: Created Directory at :artifacts/data_ingestion]
+[2026-05-25 00:14:11,743: INFO: common: Created Directory at :artifacts]
+[2026-05-25 00:14:11,744: INFO: common: Created Directory at :artifacts/data_ingestion]
+[2026-05-25 00:20:34,615: INFO: stage_01_ingestion_pipeline: >>>>>>>> data_Ingestion_stage started <<<<<<<<]
+[2026-05-25 00:20:34,623: INFO: common: Created Directory at :artifacts]
+[2026-05-25 00:20:34,623: INFO: common: Created Directory at :artifacts/data_ingestion]
+[2026-05-25 00:20:34,624: ERROR: stage_01_ingestion_pipeline: [WinError 2] The system cannot find the file specified: 'artifacts/data_ingestion/data.zip']
+Traceback (most recent call last):
+  File "e:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\pipeline\stage_01_ingestion_pipeline.py", line 43, in <module>
+    obj.main()
+    ~~~~~~~~^^
+  File "e:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\pipeline\stage_01_ingestion_pipeline.py", line 25, in main
+    print(os.path.getsize(data_ingestion.config.local_data_file))
+          ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 86, in getsize
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'artifacts/data_ingestion/data.zip'
+[2026-05-25 00:28:49,195: INFO: stage_01_ingestion_pipeline: >>>>>>>> data_Ingestion_stage started <<<<<<<<]
+[2026-05-25 00:28:49,205: INFO: common: Created Directory at :artifacts]
+[2026-05-25 00:28:49,209: INFO: common: Created Directory at :artifacts/data_ingestion]
+[2026-05-25 00:28:49,209: ERROR: stage_01_ingestion_pipeline: 'DataIngestionConfig' object has no attribute 'source_url']
+Traceback (most recent call last):
+  File "e:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\pipeline\stage_01_ingestion_pipeline.py", line 45, in <module>
+    obj.main()
+    ~~~~~~~~^^
+  File "e:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\pipeline\stage_01_ingestion_pipeline.py", line 21, in main
+    data_ingestion.download_file()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\components\data_ingestion.py", line 17, in download_file
+    source_url = self.config.source_url
+                 ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataIngestionConfig' object has no attribute 'source_url'. Did you mean: 'source_URL'?
+[2026-05-25 00:29:55,502: INFO: stage_01_ingestion_pipeline: >>>>>>>> data_Ingestion_stage started <<<<<<<<]
+[2026-05-25 00:29:55,522: INFO: common: Created Directory at :artifacts]
+[2026-05-25 00:29:55,522: INFO: common: Created Directory at :artifacts/data_ingestion]
+[2026-05-25 00:30:02,510: INFO: stage_01_ingestion_pipeline: >>>>>> stage data_Ingestion_stage completed <<<<<<
+
+x==========x]
+[2026-05-25 00:30:33,654: INFO: main: Intro to Disease classification]
+[2026-05-25 00:30:33,655: INFO: main: >>>>>>> stage data_Ingestion_stage started >>>>>>>>>>>>>>>]
+[2026-05-25 00:30:33,660: INFO: common: Created Directory at :artifacts]
+[2026-05-25 00:30:33,660: INFO: common: Created Directory at :artifacts/data_ingestion]
+[2026-05-25 00:30:41,262: INFO: main: >>>>>>>> stage data_Ingestion_stage Completed >>>>>>>>>>>>>]
