@@ -9,9 +9,6 @@ import os
 from pathlib import Path
 
 STAGE_NAME_01 = "data_Ingestion_stage"
-STAGE_NAME_02 = "Prepare Base Model Stage"
-
-
 try:
     # Stage 1: Data Ingestion
     logger.info(f">>>>>>> stage {STAGE_NAME_01} started >>>>>>>>>>>>>>>")
@@ -23,6 +20,8 @@ except Exception as e:
     logger.exception(e)
     raise e
 
+
+STAGE_NAME_02 = "Prepare Base Model Stage"
 try:
     # Stage 2: Prepare Base Model
     logger.info(f"\n\n>>>>>>> stage {STAGE_NAME_02} started >>>>>>>>>>>>>>>")
