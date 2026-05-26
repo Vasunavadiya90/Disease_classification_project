@@ -6,13 +6,13 @@ import json
 import yaml
 import joblib
 from ensure import ensure_annotations
-from box import config_box
+from box import ConfigBox
 from pathlib import Path
 from typing import Any
 import base64
 
 @ensure_annotations  # "Validate function inputs and outputs using type hints."
-def read_yaml(path_to_yaml:Path) -> config_box:
+def read_yaml(path_to_yaml:Path) -> ConfigBox:
     """reads the yaml file and returns 
     
     Args:
@@ -29,14 +29,27 @@ def read_yaml(path_to_yaml:Path) -> config_box:
     """
 
     try:
+        print(f"\nLoading YAML file: {path_to_yaml}")
 
         with open(path_to_yaml) as yaml_file:
-            content = yaml.load(yaml_file)
-            logger.info(f"yaml file : {path_to_yaml} loaded successfully")
-            return config_box(content)
-    except BoxValueError:
-        raise ValueError("Yaml file is empty")
+
+            content = yaml.safe_load(yaml_file)
+
+            print("CONTENT:")
+            print(content)
+
+            print("TYPE:")
+            print(type(content))
+
+            if content is None:
+                raise ValueError(f"YAML file is empty: {path_to_yaml}")
+
+            print(f"YAML loaded successfully: {path_to_yaml}")
+
+            return ConfigBox(content)
+
     except Exception as e:
+        print(f"ERROR while loading: {path_to_yaml}")
         raise e
 
 
@@ -75,7 +88,7 @@ def save_json(path:Path , data:dict):
     logger.info(f"json file saved at {path}")
 
 @ensure_annotations
-def load_json(path:Path):
+def     load_json(path:Path):
     '''
     jaon load
 
@@ -93,7 +106,7 @@ def load_json(path:Path):
 
         logger.info(f"json file loaded succesfully loaded at {path}")
 
-        return config_box(content)
+        return ConfigBox(content)
     
 
 @ensure_annotations

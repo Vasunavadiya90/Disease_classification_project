@@ -12,6 +12,8 @@ src/cnnclassifier/config/__init__.py
 src/cnnclassifier/config/configuration.py
 src/cnnclassifier/constants/__init__.py
 src/cnnclassifier/entity/__init__.py
+src/cnnclassifier/entity/config_entity.py
 src/cnnclassifier/pipeline/__init__.py
+src/cnnclassifier/pipeline/stage_01_ingestion_pipeline.py
 src/cnnclassifier/utils/__init__.py
 src/cnnclassifier/utils/common.py
