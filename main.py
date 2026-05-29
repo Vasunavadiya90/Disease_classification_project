@@ -9,10 +9,6 @@ from cnnclassifier.pipeline.stage_03_training_pipeline import ModelTrainingPipel
 
 logger.info("Intro to Disease classification")
 
-
-import os
-from pathlib import Path
-
 STAGE_NAME_01 = "data_Ingestion_stage"
 try:
     # Stage 1: Data Ingestion
