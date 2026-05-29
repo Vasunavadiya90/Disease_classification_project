@@ -36,3 +36,63 @@ Traceback (most recent call last):
     with open(path_to_yaml) as yaml_file:
          ~~~~^^^^^^^^^^^^^^
 FileNotFoundError: [Errno 2] No such file or directory: 'config\\config.yaml'
+[2026-05-29 14:35:55,420: INFO: 03_model_training_pipeline: *******************]
+[2026-05-29 14:35:55,421: INFO: 03_model_training_pipeline: >>>>>> stage Training started <<<<<<]
+[2026-05-29 14:35:55,423: ERROR: 03_model_training_pipeline: [Errno 2] No such file or directory: 'config\\config.yaml']
+Traceback (most recent call last):
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\pipeline\03_model_training_pipeline.py", line 34, in <module>
+    obj.main()
+    ~~~~~~~~^^
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\pipeline\03_model_training_pipeline.py", line 14, in main
+    config = configurationManager()
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\config\configuration.py", line 15, in __init__
+    self.config = read_yaml(config_filepath)
+                  ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "E:\data science\Deep_learning_project\Disease_classification_project\env\Lib\site-packages\ensure\main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\utils\common.py", line 53, in read_yaml
+    raise e
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\utils\common.py", line 34, in read_yaml
+    with open(path_to_yaml) as yaml_file:
+         ~~~~^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'config\\config.yaml'
+[2026-05-29 14:38:12,570: INFO: 03_model_training_pipeline: *******************]
+[2026-05-29 14:38:12,571: INFO: 03_model_training_pipeline: >>>>>> stage Training started <<<<<<]
+[2026-05-29 14:38:12,571: ERROR: 03_model_training_pipeline: [Errno 2] No such file or directory: 'config\\config.yaml']
+Traceback (most recent call last):
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\pipeline\03_model_training_pipeline.py", line 34, in <module>
+    obj.main()
+    ~~~~~~~~^^
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\pipeline\03_model_training_pipeline.py", line 14, in main
+    config = configurationManager()
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\config\configuration.py", line 15, in __init__
+    self.config = read_yaml(config_filepath)
+                  ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "E:\data science\Deep_learning_project\Disease_classification_project\env\Lib\site-packages\ensure\main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\utils\common.py", line 53, in read_yaml
+    raise e
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\utils\common.py", line 34, in read_yaml
+    with open(path_to_yaml) as yaml_file:
+         ~~~~^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'config\\config.yaml'
+[2026-05-29 14:42:12,765: INFO: stage_03_training_pipeline: *******************]
+[2026-05-29 14:42:12,766: INFO: stage_03_training_pipeline: >>>>>> stage Training started <<<<<<]
+[2026-05-29 14:42:12,766: ERROR: stage_03_training_pipeline: [Errno 2] No such file or directory: 'config\\config.yaml']
+Traceback (most recent call last):
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\pipeline\stage_03_training_pipeline.py", line 33, in <module>
+    obj.main()
+    ~~~~~~~~^^
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\pipeline\stage_03_training_pipeline.py", line 14, in main
+    config = configurationManager()
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\config\configuration.py", line 15, in __init__
+    self.config = read_yaml(config_filepath)
+                  ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "E:\data science\Deep_learning_project\Disease_classification_project\env\Lib\site-packages\ensure\main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\utils\common.py", line 53, in read_yaml
+    raise e
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\utils\common.py", line 34, in read_yaml
+    with open(path_to_yaml) as yaml_file:
+         ~~~~^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'config\\config.yaml'

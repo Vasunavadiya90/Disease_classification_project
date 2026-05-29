@@ -1,6 +1,7 @@
 from src.cnnclassifier import logger
 from cnnclassifier.pipeline.stage_01_ingestion_pipeline import dataIngestionTrainingPipeline
 from cnnclassifier.pipeline.stage_02_prepare_base_model_pipeline import PrepareBaseModelTrainingPipeline
+from cnnclassifier.pipeline.stage_03_training_pipeline import ModelTrainingPipeline
 
 logger.info("Intro to Disease classification")
 
@@ -28,6 +29,19 @@ try:
     prepare_base_model = PrepareBaseModelTrainingPipeline()
     prepare_base_model.main()
     logger.info(f">>>>>>>> stage {STAGE_NAME_02} Completed >>>>>>>>>>>>>")
+
+except Exception as e:
+    logger.exception(e)
+    raise e
+
+
+STAGE_NAME_03 = "Training Stage"
+try:
+    # Stage 3: Model Training
+    logger.info(f"\n\n>>>>>>> stage {STAGE_NAME_03} started >>>>>>>>>>>>>>>")
+    model_training = ModelTrainingPipeline()
+    model_training.main()
+    logger.info(f">>>>>>>> stage {STAGE_NAME_03} Completed >>>>>>>>>>>>>")
 
 except Exception as e:
     logger.exception(e)

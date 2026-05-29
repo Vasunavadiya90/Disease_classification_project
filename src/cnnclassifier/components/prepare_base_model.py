@@ -70,19 +70,13 @@ class PrepareBaseModel:
         # Create the full model by adding custom layers
         model = tf.keras.Sequential([
             base_model,
-            tf.keras.layers.Flatten(),
+            tf.keras.layers.GlobalAveragePooling2D(),
             tf.keras.layers.Dense(
-                units=512,
+                units=256,
                 activation='relu',
                 name='dense_1'
             ),
             tf.keras.layers.Dropout(rate=0.3, name='dropout_1'),
-            tf.keras.layers.Dense(
-                units=256,
-                activation='relu',
-                name='dense_2'
-            ),
-            tf.keras.layers.Dropout(rate=0.2, name='dropout_2'),
             tf.keras.layers.Dense(
                 units=self.config.params_classes,
                 activation='softmax',

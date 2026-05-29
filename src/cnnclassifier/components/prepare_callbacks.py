@@ -3,7 +3,7 @@ import urllib.request as request
 from zipfile import ZipFile
 import tensorflow as tf
 import time
-from src.cnnclassifier.config.configuration import PrepareCallbacksConfig
+from cnnclassifier.config.configuration import PrepareCallbacksConfig
 
 
 
@@ -28,10 +28,29 @@ class PrepareCallBack:
         return tf.keras.callbacks.ModelCheckpoint(
             filepath=self.config.checkpoint_model_filepath,
             save_best_only=True)
+
+    @property
+    def _create_es_callbacks(self):
+        return tf.keras.callbacks.EarlyStopping(
+            monitor="val_loss",
+            patience=5,
+            restore_best_weights=True)
+
+    @property
+    def _create_lr_callbacks(self):
+        return tf.keras.callbacks.ReduceLROnPlateau(
+            monitor="val_loss",
+            factor=0.2,
+            patience=3,
+            min_lr=1e-6)
     
     def get_tb_ckpt_callbacks(self):
-        return [self._create_tb_callbacks,
-                self._create_ckpt_callbacks]
+        return [
+            self._create_tb_callbacks,
+            self._create_ckpt_callbacks,
+            self._create_es_callbacks,
+            self._create_lr_callbacks
+        ]
     
     
 

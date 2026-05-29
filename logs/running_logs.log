@@ -357,3 +357,313 @@ x==========x]
 [2026-05-29 11:28:21,312: INFO: common: Created Directory at :artifacts]
 [2026-05-29 11:28:21,314: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir]
 [2026-05-29 11:28:21,317: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-29 11:30:32,333: INFO: common: Created Directory at :artifacts]
+[2026-05-29 11:30:32,334: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir]
+[2026-05-29 11:30:32,334: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-29 11:32:31,406: INFO: common: Created Directory at :artifacts]
+[2026-05-29 11:33:59,030: INFO: common: Created Directory at :artifacts]
+[2026-05-29 11:38:21,733: INFO: common: Created Directory at :artifacts]
+[2026-05-29 11:38:21,748: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir\model.h5]
+[2026-05-29 11:38:21,750: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-29 11:41:06,802: INFO: common: Created Directory at :artifacts]
+[2026-05-29 11:41:06,803: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir\model.h5]
+[2026-05-29 11:41:06,804: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-29 12:45:04,670: INFO: common: Created Directory at :artifacts]
+[2026-05-29 12:45:04,670: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir]
+[2026-05-29 12:45:04,671: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-29 12:45:04,672: INFO: common: Created Directory at :artifacts\training]
+[2026-05-29 12:50:23,163: INFO: common: Created Directory at :artifacts]
+[2026-05-29 12:50:23,164: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir]
+[2026-05-29 12:50:23,164: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-29 12:50:23,165: INFO: common: Created Directory at :artifacts\training]
+[2026-05-29 12:50:23,626: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-05-29 12:50:23,629: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-05-29 12:51:48,519: INFO: common: Created Directory at :artifacts]
+[2026-05-29 12:51:48,520: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir]
+[2026-05-29 12:51:48,521: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-29 12:51:48,521: INFO: common: Created Directory at :artifacts\training]
+[2026-05-29 12:51:48,765: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-05-29 13:01:21,407: INFO: common: Created Directory at :artifacts]
+[2026-05-29 13:01:21,408: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir]
+[2026-05-29 13:01:21,409: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-29 13:01:21,409: INFO: common: Created Directory at :artifacts\training]
+[2026-05-29 13:01:21,652: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-05-29 13:03:14,255: INFO: 944745852: Initializing configuration manager...]
+[2026-05-29 13:03:14,258: INFO: common: Created Directory at :artifacts]
+[2026-05-29 13:03:14,259: INFO: 944745852: Getting prepare base model configuration...]
+[2026-05-29 13:03:14,260: INFO: common: Created Directory at :artifacts/prepare_base_model]
+[2026-05-29 13:03:14,260: ERROR: 944745852: Error during pipeline execution: "'ConfigBox' object has no attribute 'iamge_size'"]
+[2026-05-29 13:03:34,888: INFO: 944745852: Initializing configuration manager...]
+[2026-05-29 13:03:34,892: INFO: common: Created Directory at :artifacts]
+[2026-05-29 13:03:34,893: INFO: 944745852: Getting prepare base model configuration...]
+[2026-05-29 13:03:34,894: INFO: common: Created Directory at :artifacts/prepare_base_model]
+[2026-05-29 13:03:34,894: INFO: 944745852: Creating PrepareBaseModel instance...]
+[2026-05-29 13:03:34,894: INFO: 3383657395: PrepareBaseModel initialized]
+[2026-05-29 13:03:34,894: INFO: 944745852: Starting base model preparation pipeline...]
+[2026-05-29 13:03:34,895: INFO: 3383657395: ================================================================================]
+[2026-05-29 13:03:34,895: INFO: 3383657395: Starting Base Model Preparation Process]
+[2026-05-29 13:03:34,895: INFO: 3383657395: ================================================================================]
+[2026-05-29 13:03:34,895: INFO: 3383657395: 
+[STEP 1] Loading base model...]
+[2026-05-29 13:03:34,896: INFO: 3383657395: Loading VGG16 model with weights: imagenet]
+[2026-05-29 13:03:35,292: INFO: 3383657395: Base model loaded successfully]
+[2026-05-29 13:03:35,293: INFO: 3383657395: 
+[STEP 2] Saving base model...]
+[2026-05-29 13:03:35,294: INFO: 3383657395: Saving model to: artifacts\prepare_base_model\base_model.h5]
+[2026-05-29 13:03:35,295: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-29 13:03:35,411: INFO: 3383657395: Model saved successfully at: artifacts\prepare_base_model\base_model.h5]
+[2026-05-29 13:03:35,413: INFO: 3383657395: 
+[STEP 3] Preparing full model with custom layers...]
+[2026-05-29 13:03:35,413: INFO: 3383657395: Preparing full model with custom top layers]
+[2026-05-29 13:03:35,414: INFO: 3383657395: Base model weights frozen]
+[2026-05-29 13:03:35,479: INFO: 3383657395: Full model created with custom top layers]
+[2026-05-29 13:03:35,480: INFO: 3383657395: Compiling model with learning rate: 0.01]
+[2026-05-29 13:03:35,485: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-05-29 13:03:35,489: INFO: 3383657395: Model compiled successfully]
+[2026-05-29 13:03:35,489: INFO: 3383657395: 
+[STEP 4] Saving updated full model...]
+[2026-05-29 13:03:35,490: INFO: 3383657395: Saving model to: artifacts\prepare_base_model\base_model_updated.h5]
+[2026-05-29 13:03:35,490: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-29 13:03:35,649: INFO: 3383657395: Model saved successfully at: artifacts\prepare_base_model\base_model_updated.h5]
+[2026-05-29 13:03:35,650: INFO: 3383657395: 
+================================================================================]
+[2026-05-29 13:03:35,650: INFO: 3383657395: Base Model Preparation Process Completed Successfully!]
+[2026-05-29 13:03:35,651: INFO: 3383657395: ================================================================================]
+[2026-05-29 13:03:35,651: INFO: 944745852: 
+Pipeline execution completed successfully!]
+[2026-05-29 13:04:36,418: INFO: common: Created Directory at :artifacts]
+[2026-05-29 13:04:36,419: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir]
+[2026-05-29 13:04:36,420: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-29 13:04:36,421: INFO: common: Created Directory at :artifacts\training]
+[2026-05-29 13:04:36,650: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-05-29 13:43:23,848: INFO: common: Created Directory at :artifacts]
+[2026-05-29 13:43:23,849: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir]
+[2026-05-29 13:43:23,851: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-29 13:43:23,853: INFO: common: Created Directory at :artifacts\training]
+[2026-05-29 13:43:24,302: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-05-29 13:49:41,900: INFO: common: Created Directory at :artifacts]
+[2026-05-29 13:49:41,901: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir]
+[2026-05-29 13:49:41,902: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-29 13:49:41,904: INFO: common: Created Directory at :artifacts\training]
+[2026-05-29 14:02:02,764: INFO: common: Created Directory at :artifacts]
+[2026-05-29 14:02:02,765: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir]
+[2026-05-29 14:02:02,767: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-29 14:02:02,768: INFO: common: Created Directory at :artifacts\training]
+[2026-05-29 14:02:14,344: INFO: common: Created Directory at :artifacts]
+[2026-05-29 14:02:14,346: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir]
+[2026-05-29 14:02:14,348: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-29 14:02:14,350: INFO: common: Created Directory at :artifacts\training]
+[2026-05-29 14:02:14,826: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-05-29 14:04:06,222: INFO: common: Created Directory at :artifacts]
+[2026-05-29 14:04:06,223: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir]
+[2026-05-29 14:04:06,225: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-29 14:04:06,226: INFO: common: Created Directory at :artifacts\training]
+[2026-05-29 14:04:06,793: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-05-29 14:04:06,798: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-05-29 14:07:06,809: INFO: common: Created Directory at :artifacts]
+[2026-05-29 14:07:06,811: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir]
+[2026-05-29 14:07:06,813: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-29 14:07:06,814: INFO: common: Created Directory at :artifacts\training]
+[2026-05-29 14:07:07,251: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-05-29 14:07:45,578: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-29 14:07:46,149: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-29 14:10:30,560: INFO: stage_02_prepare_base_model_pipeline: >>>>>>>> Prepare Base Model Stage started <<<<<<<<]
+[2026-05-29 14:10:30,564: INFO: common: Created Directory at :artifacts]
+[2026-05-29 14:10:30,565: INFO: common: Created Directory at :artifacts/prepare_base_model]
+[2026-05-29 14:10:30,566: ERROR: stage_02_prepare_base_model_pipeline: "'ConfigBox' object has no attribute 'iamge_size'"]
+Traceback (most recent call last):
+  File "E:\data science\Deep_learning_project\Disease_classification_project\env\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'IAMGE_SIZE'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\data science\Deep_learning_project\Disease_classification_project\env\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+  File "E:\data science\Deep_learning_project\Disease_classification_project\env\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'IAMGE_SIZE'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\data science\Deep_learning_project\Disease_classification_project\env\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+AttributeError: 'ConfigBox' object has no attribute 'IAMGE_SIZE'. Did you mean: 'IMAGE_SIZE'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\data science\Deep_learning_project\Disease_classification_project\env\Lib\site-packages\box\config_box.py", line 28, in __getattr__
+    return super().__getattr__(item)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "E:\data science\Deep_learning_project\Disease_classification_project\env\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'IAMGE_SIZE'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\data science\Deep_learning_project\Disease_classification_project\env\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'iamge_size'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\data science\Deep_learning_project\Disease_classification_project\env\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+  File "E:\data science\Deep_learning_project\Disease_classification_project\env\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'iamge_size'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\data science\Deep_learning_project\Disease_classification_project\env\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+AttributeError: 'ConfigBox' object has no attribute 'iamge_size'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\pipeline\stage_02_prepare_base_model_pipeline.py", line 42, in <module>
+    obj.main()
+    ~~~~~~~~^^
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\pipeline\stage_02_prepare_base_model_pipeline.py", line 33, in main
+    prepare_base_model_config = config.get_prepare_base_model_config()
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\config\configuration.py", line 42, in get_prepare_base_model_config
+    params_image_size=self.params.IAMGE_SIZE,
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\data science\Deep_learning_project\Disease_classification_project\env\Lib\site-packages\box\config_box.py", line 30, in __getattr__
+    return super().__getattr__(item.lower())
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "E:\data science\Deep_learning_project\Disease_classification_project\env\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'iamge_size'". Did you mean: 'IMAGE_SIZE'?
+[2026-05-29 14:11:01,475: INFO: stage_02_prepare_base_model_pipeline: >>>>>>>> Prepare Base Model Stage started <<<<<<<<]
+[2026-05-29 14:11:01,478: INFO: common: Created Directory at :artifacts]
+[2026-05-29 14:11:01,479: INFO: common: Created Directory at :artifacts/prepare_base_model]
+[2026-05-29 14:11:01,479: INFO: prepare_base_model: PrepareBaseModel initialized with config: PrepareBaseModelConfig(root_dir=WindowsPath('artifacts/prepare_base_model'), base_model_path=WindowsPath('artifacts/prepare_base_model/base_model.h5'), updated_base_model_path=WindowsPath('artifacts/prepare_base_model/base_model_updated.h5'), params_image_size=BoxList([224, 224, 3]), params_learning_rate=0.001, params_include_top=False, params_weights='imagenet', params_classes=2)]
+[2026-05-29 14:11:01,479: INFO: prepare_base_model: ================================================================================]
+[2026-05-29 14:11:01,479: INFO: prepare_base_model: Starting Base Model Preparation Process]
+[2026-05-29 14:11:01,479: INFO: prepare_base_model: ================================================================================]
+[2026-05-29 14:11:01,479: INFO: prepare_base_model: 
+[STEP 1] Loading base model...]
+[2026-05-29 14:11:01,479: INFO: prepare_base_model: Loading VGG16 model with weights: imagenet]
+[2026-05-29 14:11:01,980: INFO: prepare_base_model: Base model loaded successfully]
+[2026-05-29 14:11:01,980: INFO: prepare_base_model: Base model summary:]
+[2026-05-29 14:11:02,014: INFO: prepare_base_model: 
+[STEP 2] Saving base model...]
+[2026-05-29 14:11:02,014: INFO: prepare_base_model: Saving model to: artifacts\prepare_base_model\base_model.h5]
+[2026-05-29 14:11:02,014: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-29 14:11:02,158: INFO: prepare_base_model: Model saved successfully at: artifacts\prepare_base_model\base_model.h5]
+[2026-05-29 14:11:02,158: INFO: prepare_base_model: 
+[STEP 3] Preparing full model with custom layers...]
+[2026-05-29 14:11:02,158: INFO: prepare_base_model: Preparing full model with custom top layers]
+[2026-05-29 14:11:02,159: INFO: prepare_base_model: Base model weights frozen]
+[2026-05-29 14:11:02,185: INFO: prepare_base_model: Full model created with custom top layers]
+[2026-05-29 14:11:02,185: INFO: prepare_base_model: Full model summary:]
+[2026-05-29 14:11:02,191: INFO: prepare_base_model: Compiling model with learning rate: 0.001]
+[2026-05-29 14:11:02,198: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-05-29 14:11:02,202: INFO: prepare_base_model: Model compiled successfully]
+[2026-05-29 14:11:02,203: INFO: prepare_base_model: 
+[STEP 4] Saving updated full model...]
+[2026-05-29 14:11:02,203: INFO: prepare_base_model: Saving model to: artifacts\prepare_base_model\base_model_updated.h5]
+[2026-05-29 14:11:02,203: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-29 14:11:02,341: INFO: prepare_base_model: Model saved successfully at: artifacts\prepare_base_model\base_model_updated.h5]
+[2026-05-29 14:11:02,341: INFO: prepare_base_model: 
+================================================================================]
+[2026-05-29 14:11:02,341: INFO: prepare_base_model: Base Model Preparation Process Completed Successfully!]
+[2026-05-29 14:11:02,342: INFO: prepare_base_model: ================================================================================]
+[2026-05-29 14:11:02,342: INFO: stage_02_prepare_base_model_pipeline: >>>>>> stage Prepare Base Model Stage completed <<<<<<
+
+x==========x]
+[2026-05-29 14:11:34,485: INFO: common: Created Directory at :artifacts]
+[2026-05-29 14:11:34,485: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir]
+[2026-05-29 14:11:34,486: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-29 14:11:34,486: INFO: common: Created Directory at :artifacts\training]
+[2026-05-29 14:11:35,108: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-05-29 14:11:35,114: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-05-29 14:12:12,283: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-29 14:12:20,404: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-29 14:12:52,239: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-29 14:12:59,624: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-29 14:13:34,504: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-29 14:13:34,809: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-29 14:14:04,489: INFO: common: Created Directory at :artifacts]
+[2026-05-29 14:14:04,490: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir]
+[2026-05-29 14:14:04,491: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-29 14:14:04,495: INFO: common: Created Directory at :artifacts\training]
+[2026-05-29 14:14:04,720: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-05-29 14:14:36,925: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-29 14:14:37,108: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-29 14:38:30,561: INFO: stage_03_training_pipeline: *******************]
+[2026-05-29 14:38:30,561: INFO: stage_03_training_pipeline: >>>>>> stage Training started <<<<<<]
+[2026-05-29 14:38:30,566: INFO: common: Created Directory at :artifacts]
+[2026-05-29 14:38:30,566: ERROR: stage_03_training_pipeline: [WinError 183] Cannot create a file when that file already exists: 'artifacts\\prepare_callbacks\\checkpoint_dir\\model.h5']
+Traceback (most recent call last):
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\pipeline\stage_03_training_pipeline.py", line 33, in <module>
+    obj.main()
+    ~~~~~~~~^^
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\pipeline\stage_03_training_pipeline.py", line 15, in main
+    prepare_callbacks_config = config.get_prepare_callbacks_config()
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\config\configuration.py", line 54, in get_prepare_callbacks_config
+    create_directories([
+    ~~~~~~~~~~~~~~~~~~^^
+        Path(self.config.prepare_callbacks.checkpoint_model_filepath),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        Path(self.config.prepare_callbacks.tensorboard_root_log_dir)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ])
+    ^^
+  File "E:\data science\Deep_learning_project\Disease_classification_project\env\Lib\site-packages\ensure\main.py", line 835, in __call__
+    return self.f(*args, **kwargs)
+           ~~~~~~^^^^^^^^^^^^^^^^^
+  File "E:\data science\Deep_learning_project\Disease_classification_project\src\cnnclassifier\utils\common.py", line 68, in create_directories
+    os.makedirs(path , exist_ok=True)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 227, in makedirs
+FileExistsError: [WinError 183] Cannot create a file when that file already exists: 'artifacts\\prepare_callbacks\\checkpoint_dir\\model.h5'
+[2026-05-29 14:38:50,265: INFO: stage_03_training_pipeline: *******************]
+[2026-05-29 14:38:50,265: INFO: stage_03_training_pipeline: >>>>>> stage Training started <<<<<<]
+[2026-05-29 14:38:50,270: INFO: common: Created Directory at :artifacts]
+[2026-05-29 14:38:50,270: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir]
+[2026-05-29 14:38:50,271: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-29 14:38:50,272: INFO: common: Created Directory at :artifacts\training]
+[2026-05-29 14:38:50,613: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-05-29 14:38:50,616: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-05-29 14:39:24,397: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-29 14:39:24,659: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-29 14:39:24,805: INFO: stage_03_training_pipeline: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2026-05-29 14:45:37,152: INFO: stage_03_training_pipeline: *******************]
+[2026-05-29 14:45:37,152: INFO: stage_03_training_pipeline: >>>>>> stage Training started <<<<<<]
+[2026-05-29 14:45:37,155: INFO: common: Created Directory at :artifacts]
+[2026-05-29 14:45:37,156: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir]
+[2026-05-29 14:45:37,156: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-29 14:45:37,156: INFO: common: Created Directory at :artifacts\training]
+[2026-05-29 14:45:37,502: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-05-29 14:45:37,504: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-05-29 14:46:06,305: INFO: stage_03_training_pipeline: *******************]
+[2026-05-29 14:46:06,333: INFO: stage_03_training_pipeline: >>>>>> stage Training started <<<<<<]
+[2026-05-29 14:46:06,386: INFO: common: Created Directory at :artifacts]
+[2026-05-29 14:46:06,388: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir]
+[2026-05-29 14:46:06,390: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-29 14:46:06,391: INFO: common: Created Directory at :artifacts\training]
+[2026-05-29 14:46:07,198: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-05-29 14:46:07,202: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-05-29 14:46:11,239: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-29 14:46:11,525: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-29 14:46:11,691: INFO: stage_03_training_pipeline: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2026-05-29 14:46:41,713: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-29 14:46:41,958: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-29 14:46:42,088: INFO: stage_03_training_pipeline: >>>>>> stage Training completed <<<<<<
+
+x==========x]
