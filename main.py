@@ -1,4 +1,8 @@
-from src.cnnclassifier import logger
+import os
+import sys
+
+
+from cnnclassifier import logger
 from cnnclassifier.pipeline.stage_01_ingestion_pipeline import dataIngestionTrainingPipeline
 from cnnclassifier.pipeline.stage_02_prepare_base_model_pipeline import PrepareBaseModelTrainingPipeline
 from cnnclassifier.pipeline.stage_03_training_pipeline import ModelTrainingPipeline

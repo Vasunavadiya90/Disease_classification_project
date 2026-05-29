@@ -2,10 +2,7 @@ import os
 import sys
 from pathlib import Path
 
-# Automatically resolve and change to project root directory
-PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent.parent
-os.chdir(PROJECT_ROOT)
-sys.path.append(str(PROJECT_ROOT))
+
 
 from cnnclassifier.config.configuration import configurationManager
 from cnnclassifier.components.model_training import Training
