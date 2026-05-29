@@ -28,9 +28,6 @@ class PrepareCallbacksConfig:
     tensorboard_root_log_dir: Path
     checkpoint_model_filepath: Path
 
-from dataclasses import dataclass
-from pathlib import Path
-
 
 @dataclass(frozen=True)
 class TrainingConfig:
@@ -44,3 +41,10 @@ class TrainingConfig:
     params_image_size: list
     params_learning_rate:float
 
+@dataclass(frozen=True)
+class EvaluationConfig:
+    path_of_model: Path
+    training_data: Path
+    all_params: dict
+    params_image_size: list
+    params_batch_size: int
