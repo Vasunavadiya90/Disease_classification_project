@@ -152,14 +152,20 @@ def get_size(path: Path) -> str:
     return f"~ {size_in_kb} KB"
 
 
-
 def decodeImage(imgstring, fileName):
+    # If the image comes like: data:image/jpeg;base64,XXXX
+    if "," in imgstring:
+        imgstring = imgstring.split(",")[1]
+
+    # Fix missing padding
+    imgstring += "=" * (-len(imgstring) % 4)
+
     imgdata = base64.b64decode(imgstring)
-    with open(fileName, 'wb') as f:
+
+    with open(fileName, "wb") as f:
         f.write(imgdata)
-        f.close()
 
 
 def encodeImageIntoBase64(croppedImagePath):
     with open(croppedImagePath, "rb") as f:
-        return base64.b64encode(f.read())
+        return base64.b64encode(f.read()).decode("utf-8")

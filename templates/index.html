@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Classification - Chicken Health Analyzer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px 0;
+        }
+
+        .container-main {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .main-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .card-header-custom {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .card-header-custom h2 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .content-wrapper {
+            padding: 40px;
+        }
+
+        .row-custom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .row-custom {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .upload-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px dashed #667eea;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .upload-section:hover {
+            border-color: #764ba2;
+            background: linear-gradient(135deg, #c3cfe2 0%, #f5f7fa 100%);
+        }
+
+        .upload-section.drag-over {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: white;
+        }
+
+        .upload-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .upload-section.drag-over .upload-icon {
+            color: white;
+        }
+
+        .upload-text {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .upload-section.drag-over .upload-text {
+            color: white;
+        }
+
+        .upload-text small {
+            display: block;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .upload-section.drag-over small {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        .image-preview {
+            margin-top: 20px;
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-height: 300px;
+            display: none;
+        }
+
+        .image-preview.show {
+            display: block;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .controls-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn-custom {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-predict {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-predict:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+            color: white;
+        }
+
+        .btn-predict:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-train {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .btn-train:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(245, 87, 108, 0.4);
+            color: white;
+        }
+
+        .btn-train:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .results-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            display: none;
+        }
+
+        .results-section.show {
+            display: block;
+            animation: slideUp 0.4s ease-out;
+        }
+
+        .result-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .result-label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        .result-value {
+            font-size: 1.3rem;
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        .confidence-bar {
+            margin-top: 10px;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .confidence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 4px;
+            transition: width 0.4s ease;
+        }
+
+        .loading-spinner {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loading-spinner.show {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .error-message {
+            background: #fee;
+            border: 1px solid #fcc;
+            color: #c33;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+            animation: slideDown 0.4s ease-out;
+        }
+
+        .success-message {
+            background: #efe;
+            border: 1px solid #cfc;
+            color: #3c3;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideDown 0.4s ease-out;
+        }
+
+        .info-text {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .badge-custom {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-main">
+        <!-- Header -->
+        <div class="header">
+            <h1><i class="fas fa-heartbeat"></i> Chicken Health Analyzer</h1>
+            <p>Detect diseases using advanced deep learning classification</p>
+        </div>
+
+        <!-- Main Card -->
+        <div class="main-card">
+            <div class="card-header-custom">
+                <h2>Disease Classification System</h2>
+            </div>
+
+            <div class="content-wrapper">
+                <!-- Upload and Controls Section -->
+                <div class="row-custom">
+                    <!-- Upload Section -->
+                    <div>
+                        <h4 style="margin-bottom: 20px; color: #333;">
+                            <i class="fas fa-cloud-upload-alt"></i> Upload Image
+                        </h4>
+                        <div class="upload-section" id="uploadArea">
+                            <div class="upload-icon">
+                                <i class="fas fa-image"></i>
+                            </div>
+                            <p class="upload-text">
+                                Drag and drop your image here
+                                <small>or click to select</small>
+                            </p>
+                        </div>
+                        <input type="file" id="fileInput" accept="image/*">
+                        <img id="imagePreview" class="image-preview" alt="Preview">
+                        <div class="error-message" id="errorMessage"></div>
+                        <div class="success-message" id="successMessage"></div>
+                    </div>
+
+                    <!-- Controls Section -->
+                    <div class="controls-section">
+                        <h4 style="margin-bottom: 20px; color: #333;">
+                            <i class="fas fa-cogs"></i> Actions
+                        </h4>
+                        
+                        <button class="btn-custom btn-predict" id="predictBtn" disabled>
+                            <i class="fas fa-brain"></i> Predict Disease
+                        </button>
+                        
+                        <button class="btn-custom btn-train" id="trainBtn">
+                            <i class="fas fa-graduation-cap"></i> Train Model
+                        </button>
+
+                        <div class="info-text">
+                            <p style="margin: 0;">
+                                <strong>How to use:</strong>
+                            </p>
+                            <ul style="margin: 10px 0 0 20px; padding: 0;">
+                                <li>Upload a chicken fecal image</li>
+                                <li>Click "Predict Disease" to analyze</li>
+                                <li>View results with confidence scores</li>
+                            </ul>
+                        </div>
+
+                        <div class="loading-spinner" id="trainSpinner">
+                            <div class="spinner"></div>
+                            <p style="margin-top: 10px; color: #667eea;">Training model...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-section" id="resultsSection">
+                    <h4 style="margin-bottom: 20px; color: #333;">
+                        <i class="fas fa-chart-pie"></i> Prediction Results
+                    </h4>
+                    
+                    <div id="resultsContainer"></div>
+                    
+                    <div class="loading-spinner" id="predictSpinner">
+                        <div class="spinner"></div>
+                        <p style="margin-top: 10px; color: #667eea;">Analyzing image...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const imagePreview = document.getElementById('imagePreview');
+        const predictBtn = document.getElementById('predictBtn');
+        const trainBtn = document.getElementById('trainBtn');
+        const resultsSection = document.getElementById('resultsSection');
+        const resultsContainer = document.getElementById('resultsContainer');
+        const errorMessage = document.getElementById('errorMessage');
+        const successMessage = document.getElementById('successMessage');
+        const predictSpinner = document.getElementById('predictSpinner');
+        const trainSpinner = document.getElementById('trainSpinner');
+
+        let selectedFile = null;
+
+        // Upload area click handler
+        uploadArea.addEventListener('click', () => fileInput.click());
+
+        // File input change handler
+        fileInput.addEventListener('change', (e) => {
+            handleFileSelect(e.target.files[0]);
+        });
+
+        // Drag and drop handlers
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('drag-over');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('drag-over');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('drag-over');
+            handleFileSelect(e.dataTransfer.files[0]);
+        });
+
+        function handleFileSelect(file) {
+            if (!file) return;
+
+            if (!file.type.startsWith('image/')) {
+                showError('Please select a valid image file');
+                return;
+            }
+
+            selectedFile = file;
+            const reader = new FileReader();
+
+            reader.onload = (e) => {
+                imagePreview.src = e.target.result;
+                imagePreview.classList.add('show');
+                predictBtn.disabled = false;
+                showSuccess('Image loaded successfully!');
+                hideError();
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+        // Predict button handler
+        predictBtn.addEventListener('click', async () => {
+            if (!selectedFile) {
+                showError('Please select an image first');
+                return;
+            }
+
+            predictBtn.disabled = true;
+            predictSpinner.classList.add('show');
+            resultsSection.classList.add('show');
+
+            try {
+                const reader = new FileReader();
+                reader.onload = async (e) => {
+                    const base64Image = e.target.result.split(',')[1];
+
+                    const response = await fetch('/predict', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ image: base64Image })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const data = await response.json();
+                    predictSpinner.classList.remove('show');
+                    displayResults(data);
+                    hideError();
+                };
+                reader.readAsDataURL(selectedFile);
+            } catch (error) {
+                predictSpinner.classList.remove('show');
+                showError(`Prediction failed: ${error.message}`);
+                console.error('Error:', error);
+            } finally {
+                predictBtn.disabled = false;
+            }
+        });
+
+        // Train button handler
+        trainBtn.addEventListener('click', async () => {
+            if (!confirm('This will start model training. Continue?')) {
+                return;
+            }
+
+            trainBtn.disabled = true;
+            trainSpinner.classList.add('show');
+
+            try {
+                const response = await fetch('/train', {
+                    method: 'POST',
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                trainSpinner.classList.remove('show');
+                showSuccess('Training completed successfully! ' + data.message);
+                hideError();
+            } catch (error) {
+                trainSpinner.classList.remove('show');
+                showError(`Training failed: ${error.message}`);
+                console.error('Error:', error);
+            } finally {
+                trainBtn.disabled = false;
+            }
+        });
+
+        function displayResults(data) {
+            resultsContainer.innerHTML = '';
+
+            if (data.class && data.confidence) {
+                const confidence = parseFloat(data.confidence) * 100;
+                const resultHTML = `
+                    <div class="result-item">
+                        <div class="result-label">Predicted Class</div>
+                        <div class="result-value">${data.class}</div>
+                        <div class="result-label" style="margin-top: 15px;">Confidence Score</div>
+                        <div class="result-value">${confidence.toFixed(2)}%</div>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" style="width: ${confidence}%"></div>
+                        </div>
+                    </div>
+                `;
+
+                if (data.class.toLowerCase() === 'healthy') {
+                    resultsContainer.innerHTML += `<div class="badge-custom"><i class="fas fa-check-circle"></i> Healthy Status</div>`;
+                } else {
+                    resultsContainer.innerHTML += `<div class="badge-custom" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"><i class="fas fa-exclamation-triangle"></i> Disease Detected</div>`;
+                }
+
+                resultsContainer.innerHTML += resultHTML;
+            } else {
+                resultsContainer.innerHTML = '<div class="result-item">Unable to parse results. Please try again.</div>';
+            }
+        }
+
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.classList.add('show');
+            successMessage.classList.remove('show');
+        }
+
+        function hideError() {
+            errorMessage.classList.remove('show');
+        }
+
+        function showSuccess(message) {
+            successMessage.textContent = message;
+            successMessage.classList.add('show');
+            errorMessage.classList.remove('show');
+        }
+    </script>
+</body>
+</html>

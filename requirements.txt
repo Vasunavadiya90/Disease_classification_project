@@ -17,5 +17,6 @@ Flask
 Flask-Cors
 fastapi
 setuptools
+uvicorn
 
 # -e .
