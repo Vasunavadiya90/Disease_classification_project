@@ -1224,3 +1224,211 @@ x==========x]
 [2026-05-29 16:00:29,204: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2026-05-30 12:39:03,332: INFO: main: Intro to Disease classification]
+[2026-05-30 12:39:03,332: INFO: main: >>>>>>> stage data_Ingestion_stage started >>>>>>>>>>>>>>>]
+[2026-05-30 12:39:03,337: INFO: common: Created Directory at :artifacts]
+[2026-05-30 12:39:03,337: INFO: common: Created Directory at :artifacts/data_ingestion]
+[2026-05-30 12:39:07,306: INFO: main: >>>>>>>> stage data_Ingestion_stage Completed >>>>>>>>>>>>>]
+[2026-05-30 12:39:07,306: INFO: main: 
+
+>>>>>>> stage Prepare Base Model Stage started >>>>>>>>>>>>>>>]
+[2026-05-30 12:39:07,309: INFO: common: Created Directory at :artifacts]
+[2026-05-30 12:39:07,309: INFO: common: Created Directory at :artifacts/prepare_base_model]
+[2026-05-30 12:39:07,310: INFO: prepare_base_model: PrepareBaseModel initialized with config: PrepareBaseModelConfig(root_dir=WindowsPath('artifacts/prepare_base_model'), base_model_path=WindowsPath('artifacts/prepare_base_model/base_model.h5'), updated_base_model_path=WindowsPath('artifacts/prepare_base_model/base_model_updated.h5'), params_image_size=BoxList([224, 224, 3]), params_learning_rate=0.001, params_include_top=False, params_weights='imagenet', params_classes=2)]
+[2026-05-30 12:39:07,310: INFO: prepare_base_model: ================================================================================]
+[2026-05-30 12:39:07,310: INFO: prepare_base_model: Starting Base Model Preparation Process]
+[2026-05-30 12:39:07,310: INFO: prepare_base_model: ================================================================================]
+[2026-05-30 12:39:07,310: INFO: prepare_base_model: 
+[STEP 1] Loading base model...]
+[2026-05-30 12:39:07,310: INFO: prepare_base_model: Loading VGG16 model with weights: imagenet]
+[2026-05-30 12:39:07,983: INFO: prepare_base_model: Base model loaded successfully]
+[2026-05-30 12:39:07,984: INFO: prepare_base_model: Base model summary:]
+[2026-05-30 12:39:08,030: INFO: prepare_base_model: 
+[STEP 2] Saving base model...]
+[2026-05-30 12:39:08,030: INFO: prepare_base_model: Saving model to: artifacts\prepare_base_model\base_model.h5]
+[2026-05-30 12:39:08,031: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-30 12:39:08,266: INFO: prepare_base_model: Model saved successfully at: artifacts\prepare_base_model\base_model.h5]
+[2026-05-30 12:39:08,267: INFO: prepare_base_model: 
+[STEP 3] Preparing full model with custom layers...]
+[2026-05-30 12:39:08,268: INFO: prepare_base_model: Preparing full model with custom top layers]
+[2026-05-30 12:39:08,269: INFO: prepare_base_model: Base model weights frozen]
+[2026-05-30 12:39:08,285: INFO: prepare_base_model: Full model created with custom top layers]
+[2026-05-30 12:39:08,286: INFO: prepare_base_model: Full model summary:]
+[2026-05-30 12:39:08,294: INFO: prepare_base_model: Compiling model with learning rate: 0.001]
+[2026-05-30 12:39:08,312: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-05-30 12:39:08,315: INFO: prepare_base_model: Model compiled successfully]
+[2026-05-30 12:39:08,315: INFO: prepare_base_model: 
+[STEP 4] Saving updated full model...]
+[2026-05-30 12:39:08,316: INFO: prepare_base_model: Saving model to: artifacts\prepare_base_model\base_model_updated.h5]
+[2026-05-30 12:39:08,316: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-30 12:39:08,486: INFO: prepare_base_model: Model saved successfully at: artifacts\prepare_base_model\base_model_updated.h5]
+[2026-05-30 12:39:08,487: INFO: prepare_base_model: 
+================================================================================]
+[2026-05-30 12:39:08,487: INFO: prepare_base_model: Base Model Preparation Process Completed Successfully!]
+[2026-05-30 12:39:08,487: INFO: prepare_base_model: ================================================================================]
+[2026-05-30 12:39:08,487: INFO: main: >>>>>>>> stage Prepare Base Model Stage Completed >>>>>>>>>>>>>]
+[2026-05-30 12:39:08,487: INFO: main: 
+
+>>>>>>> stage Training Stage started >>>>>>>>>>>>>>>]
+[2026-05-30 12:39:08,494: INFO: common: Created Directory at :artifacts]
+[2026-05-30 12:39:08,495: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir]
+[2026-05-30 12:39:08,495: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-30 12:39:08,496: INFO: common: Created Directory at :artifacts\training]
+[2026-05-30 12:39:08,836: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-05-30 12:39:47,246: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-30 12:39:47,490: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-30 12:39:47,614: INFO: main: >>>>>>>> stage Training Stage Completed >>>>>>>>>>>>>]
+[2026-05-30 12:39:47,614: INFO: main: *******************]
+[2026-05-30 12:39:47,614: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2026-05-30 12:39:47,617: INFO: common: Created Directory at :artifacts]
+[2026-05-30 12:39:47,827: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-05-30 12:39:58,391: INFO: common: json file saved at scores.json]
+[2026-05-30 12:39:58,392: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2026-05-31 14:42:21,586: INFO: stage_01_ingestion_pipeline: >>>>>>>> data_Ingestion_stage started <<<<<<<<]
+[2026-05-31 14:42:21,589: INFO: common: Created Directory at :artifacts]
+[2026-05-31 14:42:21,589: INFO: common: Created Directory at :artifacts/data_ingestion]
+[2026-05-31 14:42:29,396: INFO: stage_01_ingestion_pipeline: >>>>>> stage data_Ingestion_stage completed <<<<<<
+
+x==========x]
+[2026-05-31 14:45:25,459: INFO: stage_01_ingestion_pipeline: >>>>>>>> data_Ingestion_stage started <<<<<<<<]
+[2026-05-31 14:45:25,462: INFO: common: Created Directory at :artifacts]
+[2026-05-31 14:45:25,462: INFO: common: Created Directory at :artifacts/data_ingestion]
+[2026-05-31 14:45:27,910: INFO: stage_01_ingestion_pipeline: >>>>>> stage data_Ingestion_stage completed <<<<<<
+
+x==========x]
+[2026-05-31 14:47:11,700: INFO: stage_01_ingestion_pipeline: >>>>>>>> data_Ingestion_stage started <<<<<<<<]
+[2026-05-31 14:47:11,703: INFO: common: Created Directory at :artifacts]
+[2026-05-31 14:47:11,704: INFO: common: Created Directory at :artifacts/data_ingestion]
+[2026-05-31 14:47:14,274: INFO: stage_01_ingestion_pipeline: >>>>>> stage data_Ingestion_stage completed <<<<<<
+
+x==========x]
+[2026-05-31 14:48:13,366: INFO: main: Intro to Disease classification]
+[2026-05-31 14:48:13,366: INFO: main: >>>>>>> stage data_Ingestion_stage started >>>>>>>>>>>>>>>]
+[2026-05-31 14:48:13,369: INFO: common: Created Directory at :artifacts]
+[2026-05-31 14:48:13,369: INFO: common: Created Directory at :artifacts/data_ingestion]
+[2026-05-31 14:48:16,606: INFO: main: >>>>>>>> stage data_Ingestion_stage Completed >>>>>>>>>>>>>]
+[2026-05-31 14:48:16,606: INFO: main: 
+
+>>>>>>> stage Prepare Base Model Stage started >>>>>>>>>>>>>>>]
+[2026-05-31 14:48:16,609: INFO: common: Created Directory at :artifacts]
+[2026-05-31 14:48:16,610: INFO: common: Created Directory at :artifacts/prepare_base_model]
+[2026-05-31 14:48:16,610: INFO: prepare_base_model: PrepareBaseModel initialized with config: PrepareBaseModelConfig(root_dir=WindowsPath('artifacts/prepare_base_model'), base_model_path=WindowsPath('artifacts/prepare_base_model/base_model.h5'), updated_base_model_path=WindowsPath('artifacts/prepare_base_model/base_model_updated.h5'), params_image_size=BoxList([224, 224, 3]), params_learning_rate=0.001, params_include_top=False, params_weights='imagenet', params_classes=2)]
+[2026-05-31 14:48:16,610: INFO: prepare_base_model: ================================================================================]
+[2026-05-31 14:48:16,610: INFO: prepare_base_model: Starting Base Model Preparation Process]
+[2026-05-31 14:48:16,610: INFO: prepare_base_model: ================================================================================]
+[2026-05-31 14:48:16,610: INFO: prepare_base_model: 
+[STEP 1] Loading base model...]
+[2026-05-31 14:48:16,610: INFO: prepare_base_model: Loading VGG16 model with weights: imagenet]
+[2026-05-31 14:48:16,994: INFO: prepare_base_model: Base model loaded successfully]
+[2026-05-31 14:48:16,994: INFO: prepare_base_model: Base model summary:]
+[2026-05-31 14:48:17,013: INFO: prepare_base_model: 
+[STEP 2] Saving base model...]
+[2026-05-31 14:48:17,014: INFO: prepare_base_model: Saving model to: artifacts\prepare_base_model\base_model.h5]
+[2026-05-31 14:48:17,014: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-31 14:48:17,109: INFO: prepare_base_model: Model saved successfully at: artifacts\prepare_base_model\base_model.h5]
+[2026-05-31 14:48:17,109: INFO: prepare_base_model: 
+[STEP 3] Preparing full model with custom layers...]
+[2026-05-31 14:48:17,109: INFO: prepare_base_model: Preparing full model with custom top layers]
+[2026-05-31 14:48:17,110: INFO: prepare_base_model: Base model weights frozen]
+[2026-05-31 14:48:17,125: INFO: prepare_base_model: Full model created with custom top layers]
+[2026-05-31 14:48:17,125: INFO: prepare_base_model: Full model summary:]
+[2026-05-31 14:48:17,130: INFO: prepare_base_model: Compiling model with learning rate: 0.001]
+[2026-05-31 14:48:17,134: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-05-31 14:48:17,136: INFO: prepare_base_model: Model compiled successfully]
+[2026-05-31 14:48:17,137: INFO: prepare_base_model: 
+[STEP 4] Saving updated full model...]
+[2026-05-31 14:48:17,137: INFO: prepare_base_model: Saving model to: artifacts\prepare_base_model\base_model_updated.h5]
+[2026-05-31 14:48:17,137: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-31 14:48:17,216: INFO: prepare_base_model: Model saved successfully at: artifacts\prepare_base_model\base_model_updated.h5]
+[2026-05-31 14:48:17,216: INFO: prepare_base_model: 
+================================================================================]
+[2026-05-31 14:48:17,216: INFO: prepare_base_model: Base Model Preparation Process Completed Successfully!]
+[2026-05-31 14:48:17,217: INFO: prepare_base_model: ================================================================================]
+[2026-05-31 14:48:17,217: INFO: main: >>>>>>>> stage Prepare Base Model Stage Completed >>>>>>>>>>>>>]
+[2026-05-31 14:48:17,217: INFO: main: 
+
+>>>>>>> stage Training Stage started >>>>>>>>>>>>>>>]
+[2026-05-31 14:48:17,219: INFO: common: Created Directory at :artifacts]
+[2026-05-31 14:48:17,220: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir]
+[2026-05-31 14:48:17,221: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-31 14:48:17,221: INFO: common: Created Directory at :artifacts\training]
+[2026-05-31 14:48:17,374: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-05-31 14:48:45,926: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-31 14:48:46,075: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-31 14:48:46,150: INFO: main: >>>>>>>> stage Training Stage Completed >>>>>>>>>>>>>]
+[2026-05-31 14:48:46,150: INFO: main: *******************]
+[2026-05-31 14:48:46,150: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2026-05-31 14:48:46,153: INFO: common: Created Directory at :artifacts]
+[2026-05-31 14:48:46,309: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-05-31 14:48:54,151: INFO: common: json file saved at scores.json]
+[2026-05-31 14:48:54,152: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2026-05-31 14:51:51,221: INFO: stage_01_ingestion_pipeline: >>>>>>>> data_Ingestion_stage started <<<<<<<<]
+[2026-05-31 14:51:51,224: INFO: common: Created Directory at :artifacts]
+[2026-05-31 14:51:51,224: INFO: common: Created Directory at :artifacts/data_ingestion]
+[2026-05-31 14:51:53,922: INFO: stage_01_ingestion_pipeline: >>>>>> stage data_Ingestion_stage completed <<<<<<
+
+x==========x]
+[2026-05-31 14:56:31,893: INFO: stage_02_prepare_base_model_pipeline: >>>>>>>> Prepare Base Model Stage started <<<<<<<<]
+[2026-05-31 14:56:31,895: INFO: common: Created Directory at :artifacts]
+[2026-05-31 14:56:31,896: INFO: common: Created Directory at :artifacts/prepare_base_model]
+[2026-05-31 14:56:31,896: INFO: prepare_base_model: PrepareBaseModel initialized with config: PrepareBaseModelConfig(root_dir=WindowsPath('artifacts/prepare_base_model'), base_model_path=WindowsPath('artifacts/prepare_base_model/base_model.h5'), updated_base_model_path=WindowsPath('artifacts/prepare_base_model/base_model_updated.h5'), params_image_size=BoxList([224, 224, 3]), params_learning_rate=0.001, params_include_top=False, params_weights='imagenet', params_classes=2)]
+[2026-05-31 14:56:31,896: INFO: prepare_base_model: ================================================================================]
+[2026-05-31 14:56:31,897: INFO: prepare_base_model: Starting Base Model Preparation Process]
+[2026-05-31 14:56:31,897: INFO: prepare_base_model: ================================================================================]
+[2026-05-31 14:56:31,897: INFO: prepare_base_model: 
+[STEP 1] Loading base model...]
+[2026-05-31 14:56:31,897: INFO: prepare_base_model: Loading VGG16 model with weights: imagenet]
+[2026-05-31 14:56:32,137: INFO: prepare_base_model: Base model loaded successfully]
+[2026-05-31 14:56:32,137: INFO: prepare_base_model: Base model summary:]
+[2026-05-31 14:56:32,154: INFO: prepare_base_model: 
+[STEP 2] Saving base model...]
+[2026-05-31 14:56:32,154: INFO: prepare_base_model: Saving model to: artifacts\prepare_base_model\base_model.h5]
+[2026-05-31 14:56:32,154: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-31 14:56:32,237: INFO: prepare_base_model: Model saved successfully at: artifacts\prepare_base_model\base_model.h5]
+[2026-05-31 14:56:32,237: INFO: prepare_base_model: 
+[STEP 3] Preparing full model with custom layers...]
+[2026-05-31 14:56:32,237: INFO: prepare_base_model: Preparing full model with custom top layers]
+[2026-05-31 14:56:32,238: INFO: prepare_base_model: Base model weights frozen]
+[2026-05-31 14:56:32,251: INFO: prepare_base_model: Full model created with custom top layers]
+[2026-05-31 14:56:32,251: INFO: prepare_base_model: Full model summary:]
+[2026-05-31 14:56:32,255: INFO: prepare_base_model: Compiling model with learning rate: 0.001]
+[2026-05-31 14:56:32,258: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-05-31 14:56:32,260: INFO: prepare_base_model: Model compiled successfully]
+[2026-05-31 14:56:32,261: INFO: prepare_base_model: 
+[STEP 4] Saving updated full model...]
+[2026-05-31 14:56:32,261: INFO: prepare_base_model: Saving model to: artifacts\prepare_base_model\base_model_updated.h5]
+[2026-05-31 14:56:32,261: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-31 14:56:32,321: INFO: prepare_base_model: Model saved successfully at: artifacts\prepare_base_model\base_model_updated.h5]
+[2026-05-31 14:56:32,321: INFO: prepare_base_model: 
+================================================================================]
+[2026-05-31 14:56:32,321: INFO: prepare_base_model: Base Model Preparation Process Completed Successfully!]
+[2026-05-31 14:56:32,321: INFO: prepare_base_model: ================================================================================]
+[2026-05-31 14:56:32,321: INFO: stage_02_prepare_base_model_pipeline: >>>>>> stage Prepare Base Model Stage completed <<<<<<
+
+x==========x]
+[2026-05-31 14:58:59,980: INFO: stage_03_training_pipeline: *******************]
+[2026-05-31 14:58:59,980: INFO: stage_03_training_pipeline: >>>>>> stage Training started <<<<<<]
+[2026-05-31 14:58:59,983: INFO: common: Created Directory at :artifacts]
+[2026-05-31 14:58:59,983: INFO: common: Created Directory at :artifacts\prepare_callbacks\checkpoint_dir]
+[2026-05-31 14:58:59,983: INFO: common: Created Directory at :artifacts\prepare_callbacks\tensorboard_log_dir]
+[2026-05-31 14:58:59,984: INFO: common: Created Directory at :artifacts\training]
+[2026-05-31 14:59:00,177: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-05-31 14:59:00,179: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-05-31 14:59:22,887: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-31 14:59:23,068: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2026-05-31 14:59:23,134: INFO: stage_03_training_pipeline: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2026-05-31 14:59:27,188: INFO: stage_04_model_evaluation: *******************]
+[2026-05-31 14:59:27,188: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2026-05-31 14:59:27,191: INFO: common: Created Directory at :artifacts]
+[2026-05-31 14:59:27,393: WARNING: config: TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.]
+[2026-05-31 14:59:27,396: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-05-31 14:59:35,051: INFO: common: json file saved at scores.json]
+[2026-05-31 14:59:35,052: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
